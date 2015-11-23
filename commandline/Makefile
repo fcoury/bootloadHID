@@ -24,8 +24,8 @@ CC=				gcc
 CXX=			g++
 CFLAGS=			-O2 -Wall $(USBFLAGS)
 LIBS=			$(USBLIBS)
-ARCH_COMPILE=	
-ARCH_LINK=		
+ARCH_COMPILE=
+ARCH_LINK=
 
 OBJ=		main.o usbcalls.o
 PROGRAM=	bootloadHID$(EXE_SUFFIX)
@@ -43,4 +43,4 @@ clean:
 	rm -f $(OBJ) $(PROGRAM)
 
 .c.o:
-	$(CC) $(ARCH_COMPILE) $(CFLAGS) -c $*.c -o $*.o
+	$(CC) $(ARCH_COMPILE) $(CFLAGS) -c $*.c -DIDENT_VENDOR_NUM=$(VENDORID) -DIDENT_PRODUCT_NUM=$(PRODUCTID)  -o $*.o

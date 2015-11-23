@@ -14,9 +14,14 @@
 #include <errno.h>
 #include "usbcalls.h"
 
+/* (+0) evalutated to false if macro has no value */
+#if !(IDENT_VENDOR_NUM + 0)
 #define IDENT_VENDOR_NUM        0x16c0
+#endif
 #define IDENT_VENDOR_STRING     "obdev.at"
+#if !(IDENT_PRODUCT_NUM + 0)
 #define IDENT_PRODUCT_NUM       1503
+#endif
 #define IDENT_PRODUCT_STRING    "HIDBoot"
 
 /* ------------------------------------------------------------------------- */
