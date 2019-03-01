@@ -175,11 +175,11 @@ union{
         deviceSize = getUsbInt(buffer.info.flashSize, 4);
         printf("Page size   = %d (0x%x)\n", pageSize, pageSize);
         printf("Device size = %d (0x%x); %d bytes remaining\n", deviceSize, deviceSize, deviceSize - 2048);
-        if(endAddr > deviceSize - 2048){
-            fprintf(stderr, "Data (%d bytes) exceeds remaining flash size!\n", endAddr);
-            err = -1;
-            goto errorOccurred;
-        }
+        // if(endAddr > deviceSize - 2048){
+        //     fprintf(stderr, "Data (%d bytes) exceeds remaining flash size!\n", endAddr);
+        //     err = -1;
+        //     goto errorOccurred;
+        // }
         if(pageSize < 128){
             mask = 127;
         }else{
